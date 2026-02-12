@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard | ADMIN</title>
+<link rel="stylesheet" href="dashboard.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="video-bg">
+  <video autoplay muted loop playsinline>
+    <source src="assets/videos/bg1.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="sidebar">
+  <h2>OTMS</h2>
+  <a onclick="showSection('profile')">👨🏻‍💼 Profile</a>
+  <a onclick="showSection('stats')">📊 Dashboard</a>
+  <a onclick="showSection('users')">👥 Users</a>
+  <a onclick="showSection('bookings')">📁 Bookings</a>
+  <a onclick="showSection('packages')">📦 Packages</a>
+  <a onclick="showSection('destinations')">📍 Destinations</a>
+  <a onclick="showSection('payments')">🧾 Payments</a>
+  <a onclick="showSection('reviews')">⭐ Reviews</a>
+  <a onclick="showSection('vehicles')">🚍 Vehicles</a>
+  <a onclick="showSection('hotels')">🏨 Hotels</a>
+  <a onclick="showSection('reports')">📊 Reports</a>
+  <a onclick="logout()">🚪 Logout</a>
+</div>
+
+<div class="main">
+
+<!-- ================= PROFILE ================= -->
+<section id="profile" class="section">
+<h1>Profile & Settings</h1>
+
+<div class="cards">
+
+<div class="card profile-card">
+
+  <div class="profile-avatar">
+    <img src="assets/admin.jpg" alt="Admin Profile">
+  </div>
+
+  <h3>👤 Admin Profile</h3>
+  <p>Name: subham</p>
+  <p>Email: subhampanigrahi@804@gmail.com</p>
+  <button>Edit Profile</button>
+
+</div>
+
+
+<div class="card">
+  <h3>🔐 Change Password</h3>
+  <input type="password" placeholder="Current Password">
+  <input type="password" placeholder="New Password">
+  <button>Update Password</button>
+</div>
+
+<div class="card">
+  <h3>⚙ System Preferences</h3>
+  <p>Theme:
+    <select>
+      <option>Dark</option>
+      <option>Light</option>
+    </select>
+  </p>
+  <p>Notifications:
+    <select>
+      <option>Enabled</option>
+      <option>Disabled</option>
+    </select>
+  </p>
+  <button>Save Preferences</button>
+</div>
+
+<div class="card">
+  <h3>🛡 Security</h3>
+  <p>Last Login: Today</p>
+  <p>Login Alerts: Enabled</p>
+  <button>View Login History</button>
+</div>
+
+</div>
+</section>
+
+<!-- ================= DASHBOARD ================= -->
+<section id="stats" class="section active">
+<h1>Dashboard Overview</h1>
+
+<!-- KPI Cards -->
+<div class="stats-grid">
+  <div class="stat-card glow">
+    <span>👥 Users</span>
+    <h2>120</h2>
+    <small class="up">▲ 8%</small>
+  </div>
+
+  <div class="stat-card glow">
+    <span>📦 Bookings</span>
+    <h2>85</h2>
+    <small class="up">▲ 12%</small>
+  </div>
+
+  <div class="stat-card glow">
+    <span>✈ Trips</span>
+    <h2>24</h2>
+    <small class="down">▼ 2%</small>
+  </div>
+
+  <div class="stat-card glow">
+    <span>💰 Revenue</span>
+    <h2>₹1.2L</h2>
+    <small class="up">▲ 18%</small>
+  </div>
+</div>
+
+<!-- Charts -->
+<div class="charts-grid">
+  <canvas id="bookingChart"></canvas>
+  <canvas id="revenueChart"></canvas>
+  <canvas id="destinationChart"></canvas>
+</div>
+
+</section>
+
+
+<!-- ================= USERS ================= -->
+<section id="users" class="section">
+<h1>Users</h1>
+<table>
+<tr><th>ID</th><th>Name</th><th>Email</th></tr>
+<tr><td>1</td><td>Amit</td><td>amit@gmail.com</td></tr>
+<tr><td>2</td><td>Riya</td><td>riya@gmail.com</td></tr>
+<tr><td>3</td><td>Rahul</td><td>rahul@gmail.com</td></tr>
+<tr><td>4</td><td>Priya</td><td>priya@gmail.com</td></tr>
+<tr><td>5</td><td>Rohit</td><td>rohit@gmail.com</td></tr>
+<tr><td>6</td><td>Anjali</td><td>anjali@gmail.com</td></tr>
+<tr><td>7</td><td>Suman</td><td>suman@gmail.com</td></tr>
+<tr><td>8</td><td>Pooja</td><td>pooja@gmail.com</td></tr>
+<tr><td>9</td><td>Vikas</td><td>vikas@gmail.com</td></tr>
+<tr><td>10</td><td>Neha</td><td>neha@gmail.com</td></tr>
+<tr><td>11</td><td>Karan</td><td>karan@gmail.com</td></tr>
+<tr><td>12</td><td>Sunita</td><td>sunita@gmail.com</td></tr>
+<tr><td>13</td><td>Manoj</td><td>manoj@gmail.com</td></tr>
+<tr><td>14</td><td>Kavya</td><td>kavya@gmail.com</td></tr>
+<tr><td>15</td><td>Deepak</td><td>deepak@gmail.com</td></tr>
+<tr><td>16</td><td>Shreya</td><td>shreya@gmail.com</td></tr>
+<tr><td>17</td><td>Arjun</td><td>arjun@gmail.com</td></tr>
+<tr><td>18</td><td>Nikita</td><td>nikita@gmail.com</td></tr>
+<tr><td>19</td><td>Sachin</td><td>sachin@gmail.com</td></tr>
+<tr><td>20</td><td>Tanya</td><td>tanya@gmail.com</td></tr>
+</table>
+</section>
+
+<!-- ================= BOOKINGS ================= -->
+<section id="bookings" class="section">
+<h1>Bookings</h1>
+<table>
+<tr><td>101</td><td>Amit</td><td>Goa</td><td>Confirmed</td></tr>
+<tr><td>102</td><td>Riya</td><td>Manali</td><td>Pending</td></tr>
+<tr><td>103</td><td>Rahul</td><td>Kerala</td><td>Confirmed</td></tr>
+<tr><td>104</td><td>Priya</td><td>Jaipur</td><td>Cancelled</td></tr>
+<tr><td>105</td><td>Rohit</td><td>Shimla</td><td>Confirmed</td></tr>
+
+<tr><td>106</td><td>Neha</td><td>Goa</td><td>Pending</td></tr>
+<tr><td>107</td><td>Karan</td><td>Manali</td><td>Confirmed</td></tr>
+<tr><td>108</td><td>Pooja</td><td>Udaipur</td><td>Confirmed</td></tr>
+<tr><td>109</td><td>Vikram</td><td>Kashmir</td><td>Cancelled</td></tr>
+<tr><td>110</td><td>Anjali</td><td>Ooty</td><td>Confirmed</td></tr>
+
+<tr><td>111</td><td>Sachin</td><td>Rishikesh</td><td>Pending</td></tr>
+<tr><td>112</td><td>Meera</td><td>Munnar</td><td>Confirmed</td></tr>
+<tr><td>113</td><td>Arjun</td><td>Andaman</td><td>Confirmed</td></tr>
+<tr><td>114</td><td>Kavya</td><td>Darjeeling</td><td>Cancelled</td></tr>
+<tr><td>115</td><td>Ramesh</td><td>Varanasi</td><td>Confirmed</td></tr>
+
+<tr><td>116</td><td>Sneha</td><td>Jaipur</td><td>Pending</td></tr>
+<tr><td>117</td><td>Aditya</td><td>Goa</td><td>Confirmed</td></tr>
+<tr><td>118</td><td>Nisha</td><td>Kerala</td><td>Confirmed</td></tr>
+<tr><td>119</td><td>Deepak</td><td>Shimla</td><td>Cancelled</td></tr>
+<tr><td>120</td><td>Swati</td><td>Manali</td><td>Pending</td></tr>
+
+<tr><td>121</td><td>Mohit</td><td>Udaipur</td><td>Confirmed</td></tr>
+<tr><td>122</td><td>Pankaj</td><td>Kashmir</td><td>Confirmed</td></tr>
+<tr><td>123</td><td>Divya</td><td>Ooty</td><td>Pending</td></tr>
+<tr><td>124</td><td>Suresh</td><td>Andaman</td><td>Confirmed</td></tr>
+<tr><td>125</td><td>Tina</td><td>Rishikesh</td><td>Cancelled</td></tr>
+
+</table>
+</section>
+
+<!-- ================= PACKAGES ================= -->
+<section id="packages" class="section">
+<h1>Tour Packages</h1>
+<table>
+<tr><th>ID</th><th>Name</th><th>Price</th><th>Days</th><th>Status</th></tr>
+<tr><td>1</td><td>Goa Holiday</td><td>₹12000</td><td>3</td><td>Active</td></tr>
+<tr><td>2</td><td>Manali Snow Trip</td><td>₹18000</td><td>5</td><td>Active</td></tr>
+<tr><td>3</td><td>Kerala Backwater Tour</td><td>₹15000</td><td>4</td><td>Active</td></tr>
+<tr><td>4</td><td>Rajasthan Royal Tour</td><td>₹22000</td><td>6</td><td>Active</td></tr>
+<tr><td>5</td><td>Darjeeling Tea Hills</td><td>₹14000</td><td>4</td><td>Inactive</td></tr>
+<tr><td>6</td><td>Andaman Beach Escape</td><td>₹28000</td><td>5</td><td>Active</td></tr>
+<tr><td>7</td><td>Shimla Manali Combo</td><td>₹20000</td><td>6</td><td>Active</td></tr>
+<tr><td>8</td><td>Jaipur Weekend Tour</td><td>₹9000</td><td>2</td><td>Active</td></tr>
+<tr><td>9</td><td>Kashmir Paradise</td><td>₹25000</td><td>5</td><td>Active</td></tr>
+<tr><td>10</td><td>Ooty Hill Station</td><td>₹13000</td><td>3</td><td>Inactive</td></tr>
+<tr><td>11</td><td>Varanasi Spiritual Tour</td><td>₹11000</td><td>3</td><td>Active</td></tr>
+<tr><td>12</td><td>Ladakh Adventure Trip</td><td>₹30000</td><td>7</td><td>Active</td></tr>
+
+</table>
+</section>
+
+<!-- ================= DESTINATIONS ================= -->
+<section id="destinations" class="section">
+<h1>Destinations</h1>
+<table>
+<tr><th>ID</th><th>City</th><th>State</th><th>Status</th></tr>
+<tr><td>1</td><td>Goa</td><td>Goa</td><td>Active</td></tr>
+<tr><td>2</td><td>Manali</td><td>Himachal Pradesh</td><td>Active</td></tr>
+<tr><td>3</td><td>Jaipur</td><td>Rajasthan</td><td>Active</td></tr>
+<tr><td>4</td><td>Udaipur</td><td>Rajasthan</td><td>Active</td></tr>
+<tr><td>5</td><td>Shimla</td><td>Himachal Pradesh</td><td>Active</td></tr>
+<tr><td>6</td><td>Ooty</td><td>Tamil Nadu</td><td>Active</td></tr>
+<tr><td>7</td><td>Darjeeling</td><td>West Bengal</td><td>Inactive</td></tr>
+<tr><td>8</td><td>Munnar</td><td>Kerala</td><td>Active</td></tr>
+<tr><td>9</td><td>Kashmir</td><td>Jammu & Kashmir</td><td>Active</td></tr>
+<tr><td>10</td><td>Rishikesh</td><td>Uttarakhand</td><td>Active</td></tr>
+<tr><td>11</td><td>Andaman</td><td>Andaman & Nicobar</td><td>Active</td></tr>
+<tr><td>12</td><td>Varanasi</td><td>Uttar Pradesh</td><td>Active</td></tr>
+
+</table>
+</section>
+
+<!-- ================= PAYMENTS ================= -->
+<section id="payments" class="section">
+<h1>Payments</h1>
+<table>
+<tr><th>ID</th><th>User</th><th>Amount</th><th>Status</th></tr>
+<tr><td>501</td><td>Amit</td><td>₹12000</td><td>Success</td></tr>
+<tr><td>502</td><td>Riya</td><td>₹18000</td><td>Pending</td></tr>
+<tr><td>503</td><td>Rahul</td><td>₹15000</td><td>Success</td></tr>
+<tr><td>504</td><td>Neha</td><td>₹22000</td><td>Failed</td></tr>
+<tr><td>505</td><td>Arjun</td><td>₹9000</td><td>Success</td></tr>
+<tr><td>506</td><td>Pooja</td><td>₹14000</td><td>Pending</td></tr>
+<tr><td>507</td><td>Karan</td><td>₹28000</td><td>Success</td></tr>
+<tr><td>508</td><td>Sneha</td><td>₹20000</td><td>Success</td></tr>
+<tr><td>509</td><td>Vikram</td><td>₹13000</td><td>Failed</td></tr>
+<tr><td>510</td><td>Anjali</td><td>₹11000</td><td>Success</td></tr>
+<tr><td>511</td><td>Rohit</td><td>₹30000</td><td>Pending</td></tr>
+<tr><td>512</td><td>Kavya</td><td>₹16000</td><td>Success</td></tr>
+<tr><td>513</td><td>Mohit</td><td>₹17000</td><td>Failed</td></tr>
+<tr><td>514</td><td>Priya</td><td>₹12500</td><td>Success</td></tr>
+<tr><td>515</td><td>Aditya</td><td>₹21000</td><td>Pending</td></tr>
+<tr><td>516</td><td>Meera</td><td>₹9500</td><td>Success</td></tr>
+<tr><td>517</td><td>Sanjay</td><td>₹18500</td><td>Success</td></tr>
+
+</table>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews" class="section">
+<h1>Customer Reviews</h1>
+<table>
+<tr><th>User</th><th>Package</th><th>Rating</th><th>Comment</th></tr>
+<tr><td>Riya</td><td>Goa</td><td>⭐⭐⭐⭐⭐</td><td>Excellent trip!</td></tr>
+<tr><td>Amit</td><td>Manali</td><td>⭐⭐⭐⭐</td><td>Snow view was amazing.</td></tr>
+<tr><td>Neha</td><td>Jaipur</td><td>⭐⭐⭐⭐⭐</td><td>Royal experience, loved it.</td></tr>
+<tr><td>Rahul</td><td>Kerala</td><td>⭐⭐⭐⭐</td><td>Very peaceful and beautiful.</td></tr>
+<tr><td>Pooja</td><td>Ooty</td><td>⭐⭐⭐⭐⭐</td><td>Weather was perfect.</td></tr>
+<tr><td>Karan</td><td>Kashmir</td><td>⭐⭐⭐⭐⭐</td><td>Heaven on earth!</td></tr>
+<tr><td>Sneha</td><td>Darjeeling</td><td>⭐⭐⭐</td><td>Good but crowded.</td></tr>
+<tr><td>Arjun</td><td>Rishikesh</td><td>⭐⭐⭐⭐</td><td>Great for adventure.</td></tr>
+<tr><td>Anjali</td><td>Udaipur</td><td>⭐⭐⭐⭐⭐</td><td>Beautiful lakes and hotels.</td></tr>
+<tr><td>Vikram</td><td>Shimla</td><td>⭐⭐⭐⭐</td><td>Nice family trip.</td></tr>
+<tr><td>Meera</td><td>Munnar</td><td>⭐⭐⭐⭐⭐</td><td>Tea gardens were stunning.</td></tr>
+<tr><td>Rohit</td><td>Andaman</td><td>⭐⭐⭐⭐</td><td>Clean beaches and clear water.</td></tr>
+
+<!-- Low ratings -->
+<tr><td>Sunita</td><td>Delhi</td><td>⭐⭐</td><td>Not well organized.</td></tr>
+<tr><td>Mahesh</td><td>Agra</td><td>⭐</td><td>Very poor service.</td></tr>
+<tr><td>Kavita</td><td>Varanasi</td><td>⭐⭐</td><td>Hotels were not clean.</td></tr>
+<tr><td>Ramesh</td><td>Puri</td><td>⭐</td><td>Bad experience overall.</td></tr>
+
+</table>
+</section>
+
+<!-- ================= VEHICLES ================= -->
+<section id="vehicles" class="section">
+<h1>Vehicles</h1>
+<table>
+<tr><th>ID</th><th>Type</th><th>Number</th><th>Status</th></tr>
+<tr><td>1</td><td>Bus</td><td>OD-02-8899</td><td>Available</td></tr>
+<tr><td>2</td><td>SUV</td><td>OD-05-2345</td><td>Available</td></tr>
+<tr><td>3</td><td>Sedan</td><td>OD-07-7788</td><td>Booked</td></tr>
+<tr><td>4</td><td>Mini Bus</td><td>OD-10-4567</td><td>Available</td></tr>
+<tr><td>5</td><td>Tempo Traveller</td><td>OD-03-9988</td><td>Booked</td></tr>
+<tr><td>6</td><td>Luxury Coach</td><td>OD-09-1122</td><td>Available</td></tr>
+<tr><td>7</td><td>Hatchback</td><td>OD-06-3344</td><td>Available</td></tr>
+<tr><td>8</td><td>Electric Car</td><td>OD-11-5566</td><td>Available</td></tr>
+<tr><td>9</td><td>Bike</td><td>OD-04-7789</td><td>Available</td></tr>
+<tr><td>10</td><td>Jeep</td><td>OD-08-6655</td><td>Booked</td></tr>
+<tr><td>11</td><td>Pickup Van</td><td>OD-12-9900</td><td>Available</td></tr>
+<tr><td>12</td><td>Tourist Van</td><td>OD-01-2233</td><td>Available</td></tr>
+
+
+</table>
+</section>
+
+<!-- ================= HOTELS ================= -->
+<section id="hotels" class="section">
+<h1>Hotels</h1>
+<table>
+<tr><td>1</td><td>Sea View Resort</td><td>Goa</td><td>Available</td></tr>
+<tr><td>2</td><td>Snow Peak Hotel</td><td>Manali</td><td>Available</td></tr>
+<tr><td>3</td><td>Royal Palace Inn</td><td>Jaipur</td><td>Booked</td></tr>
+<tr><td>4</td><td>Lake View Residency</td><td>Udaipur</td><td>Available</td></tr>
+<tr><td>5</td><td>Hill Top Retreat</td><td>Shimla</td><td>Available</td></tr>
+<tr><td>6</td><td>Green Valley Resort</td><td>Munnar</td><td>Booked</td></tr>
+<tr><td>7</td><td>Beach Paradise Hotel</td><td>Andaman</td><td>Available</td></tr>
+<tr><td>8</td><td>Heritage Grand</td><td>Varanasi</td><td>Available</td></tr>
+<tr><td>9</td><td>Mountain View Lodge</td><td>Darjeeling</td><td>Booked</td></tr>
+<tr><td>10</td><td>Golden Sands Hotel</td><td>Puri</td><td>Available</td></tr>
+<tr><td>11</td><td>City Comfort Inn</td><td>Bhubaneswar</td><td>Available</td></tr>
+<tr><td>12</td><td>River Side Resort</td><td>Rishikesh</td><td>Booked</td></tr>
+<tr><td>13</td><td>Blue Ocean Suites</td><td>Chennai</td><td>Available</td></tr>
+<tr><td>14</td><td>Royal Crown Hotel</td><td>Delhi</td><td>Available</td></tr>
+<tr><td>15</td><td>Sunrise Residency</td><td>Ooty</td><td>Booked</td></tr>
+<tr><td>16</td><td>Cloud Nine Resort</td><td>Coorg</td><td>Available</td></tr>
+
+</table>
+</section>
+
+<!-- ================= REPORTS ================= -->
+<section id="reports" class="section">
+<h1>Reports</h1>
+<div class="report-cards">
+  <div class="card">📦 Total Bookings<br><b>1,245</b></div>
+  <div class="card">💰 Revenue<br><b>₹8,45,000</b></div>
+  <div class="card">👥 Users<br><b>620</b></div>
+  <div class="card">🔥 Popular<br><b>Goa</b></div>
+</div>
+
+<div class="charts">
+  <canvas id="bookingChart"></canvas>
+  <canvas id="revenueChart"></canvas>
+</div>
+
+<div class="report-actions">
+  <button>⬇ Download PDF</button>
+  <button>⬇ Export CSV</button>
+</div>
+
+</section>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
