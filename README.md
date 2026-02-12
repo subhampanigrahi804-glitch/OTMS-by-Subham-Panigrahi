@@ -28,7 +28,7 @@
  <h2>Hi there👋, Enjoy the World of Open source contribution </h2>
 
 
-<p>Hello Coders!!👨‍💻<br> I am Arpan Chowdhury, an aspiring Web developer🤖. Here is the project on front-end Web Development.</p>
+<p>Hello Coders!!👨‍💻<br> I am Subham panigrahi, an aspiring Web developer🤖. Here is the project on front-end Web Development.</p>
 
 
 
