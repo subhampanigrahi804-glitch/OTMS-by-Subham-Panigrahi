@@ -6,8 +6,7 @@
         <img src="https://images.pexels.com/photos/36121199/pexels-photo-36121199.png" alt="Typing SVG"/> 
     </h1>
 </div>
-   
-![image](https://github.com/avanimathur/Travel_Website/assets/151984867/1024d506-92c6-4b35-a4ab-2d4eaca78199)
+
 
 
  <div align="center">
